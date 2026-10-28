@@ -18,15 +18,12 @@ void enableMode(void) {
 	struct termios raw = orig;
 	raw.c_lflag &= ~(ECHO | ICANON);
 	tcsetattr(STDIN_FILENO, TCSAFLUSH, &raw);
-	char *enter = "\x1b[?1049h"
+	char *enter = "\x1b[?1049h";
 	write(STDOUT_FILENO, enter, strlen(enter));
 }
 
 int main(int ac, char **av) {
 	enableMode();
 
-
-
-	disableMode();
 	return 0;
 }
