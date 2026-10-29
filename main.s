@@ -7,11 +7,11 @@ msg: .asciz "KRIM\n"
 krim:
 mov $1, %eax
 mov $1, %edi
-lea msg(%rip), %esi
+lea msg(%rip), %rsi
 mov $0, %edx
 for:
 inc %edx
-cmpb msg(%edx), 0
+cmpb $0, msg(%edx)
 jne for
 syscall
 
