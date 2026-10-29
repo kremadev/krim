@@ -33,7 +33,7 @@ movb $0, raw+23(%rip)
 mov $16, %eax
 mov $0, %edi
 mov $0x5402, %esi
-mov raw(%rip), %rdx
+lea raw(%rip), %rdx
 syscall
 ret
 
